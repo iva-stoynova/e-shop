@@ -44,7 +44,7 @@ public class OrderProductController {
 	    return  orderProductService.getOrderProducts();
 	}
 		
-	@PutMapping("/getNeededByProductId/{id}")
+	@GetMapping("/getNeededByProductId/{id}")
 	public String checkInventory(@PathVariable("id") Integer productId) {
 	
 		Map<Integer, Integer> inventory = new HashMap<Integer, Integer>();
@@ -59,7 +59,7 @@ public class OrderProductController {
         return Arrays.toString(inventory.entrySet().toArray());        
     }
 	
-	@PutMapping("/getAllNeeded")
+	@GetMapping("/getAllNeeded")
 	public Map<Integer, Integer> checkInventoryForAll() {
 	
 		Map<Integer, Integer> inventory = new HashMap<Integer, Integer>();		
