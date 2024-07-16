@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 import com.example.e_shop.model.OrderProduct;
 
 @Repository
-//public class OrderProductRepository {
 public interface OrderProductRepository extends CrudRepository<OrderProduct, Long> {
 
 	
@@ -17,38 +16,5 @@ public interface OrderProductRepository extends CrudRepository<OrderProduct, Lon
 	
 	@Query("select po.productId, sum(po.quantity) as total_quantity from order_product po group by po.productId")
 	List<List<Integer>> getAllProductsQuantity();
-	
-	
-	
-	
-	
-	
-	/*@Autowired
-	private JdbcTemplate jdbcTemplate;
-		
-		
-    @SuppressWarnings("deprecation")
-	public List<Products> getProductByOrderId(Integer order_id) {
-    	
-    	List<Products> productList = new ArrayList<>();
-                
-        List<Integer> productIds =  jdbcTemplate.queryForList("SELECT product_id FROM order_product where order_id='"+order_id+"'", Integer.class);        
-        String inSql = String.join(",", Collections.nCopies(productIds.size(), "?"));
-		
-		productList=jdbcTemplate.query(String.format("SELECT * from Products where id IN (%s)", inSql), 
-			productIds.toArray(),	  (rs, rowNum) -> new Products(rs.getLong("id"), rs.getString("name"),
-			        rs.getInt("quantity"), rs.getBigDecimal("price")));			 
-		
-		return productList;      
-    }
-    
-    public int getAllProductsQuantityByProductId(Integer product_id) {
-		
-		int totalQuantity = 0;
-		
-		totalQuantity=jdbcTemplate.queryForObject("SELECT sum(quantity) from order_product where product_id='"+product_id+"'", Integer.class);  
-		
-		return totalQuantity;
-	}*/
 	
 }

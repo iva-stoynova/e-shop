@@ -15,7 +15,7 @@ import com.example.e_shop.model.Products;
 import com.example.e_shop.repository.OrderProductRepository;
 
 @Service
-public class OrderProductServiceImpl { // implements OrderProductService{
+public class OrderProductServiceImpl {
 
 	@Autowired
 	OrderProductRepository orderProductsRepository;
@@ -34,40 +34,5 @@ public class OrderProductServiceImpl { // implements OrderProductService{
         orderProductsRepository.findAll().forEach(orderproduct -> out.add(orderproduct));
         return out;
     }
-    
-    
-    
-    
-	
-	/*@Override
-	public List<Products> getProductByOrderId(Integer orderId) {
-		// TODO Auto-generated method stub
-		
-		List<Products> result=new ArrayList<>();
-		
-		try {
-			result = orderProductsRepository.getProductByOrderId(orderId);
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
-		return result;
-	}
-
-	@Override
-	public int getAllProductsQuantityByProductId(Integer productId) {
-		int sum = 0;
-		sum = orderProductsRepository.getAllProductsQuantityByProductId(productId);
-		return sum;
-	}*/
-	
-	
-	
-	
-	//public Products updateItem(Products item, String no) {
-	//	orderProductsRepository.save(item);
-	//	return item;
-	//}
-
+  
 }

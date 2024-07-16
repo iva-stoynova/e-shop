@@ -32,11 +32,9 @@ public class OrderProductController {
 
 
 	@Autowired
-	//private OrderProductService orderProductService;
 	private OrderProductServiceImpl orderProductService;
 	
 	@Autowired
-	//ProductsService productService;
 	private ProductsServiceImpl productService;
 	
 	
@@ -80,80 +78,4 @@ public class OrderProductController {
         return inventory;
     }
 
-	
-	
-	
-	
-	
-	
-	
-	
-	/*@GetMapping("/getOrderProducts/{id}")	
-	public List<Products> getAllProductsByOrderId(@PathVariable("id") Integer orderId) {
-		return orderProductService.getProductByOrderId(orderId);
-	}
-	
-	@GetMapping("/getSumProductsByProductId/{id}")
-	public int getAllProductsQuantityByProductId(@PathVariable("id") Integer productId) {
-		return orderProductService.getAllProductsQuantityByProductId(productId);
-	}*/
-	
-	
-	
-	//@GetMapping("/orderproducts")
-	//public List<OrderProduct> getAllItems() {
-		//return orderProductService.getAllItems();
-	//}
-	
-	//@PostMapping("/orderproducts")
-	//@ApiOperation( value = "Add an items to stock", 
-	//notes = "Add an item to the stock from the request body", response = Item.class)
-	//public OrderProduct addItem(@RequestBody OrderProduct item) {
-	//	return orderProductService.addItem(item);
-	//}
-
-	//@GetMapping("/orderproducts/{id}")
-	//public int getAllProductsQuantityByProductId(@PathVariable("id") Integer productId) {
-	//@ApiOperation( value = "Read item details by item no", 
-	//public OrderProduct getItem(@PathVariable Long id) {
-	//	return orderProductService.getItem(id);
-	//}
-		//orderProductService.getItem(id);
-	//	return 0;
-	//}
-	
-	
-	
-	
-	/*@PutMapping("/updateProduct/{productId}/d/{quantity}")	
-	public boolean depositProductInStock(@PathVariable Integer productId, @PathVariable Integer quantity) {
-		Products item = productService.getProductsByProductId(Long.valueOf(productId)); //itemService.getItem(no);
-		Integer currQuantity = item.getQuantity();
-		int newQuantity = currQuantity + quantity; //Integer.parseInt(quantity);
-		item.setQuantity(newQuantity); //String.valueOf(newQuantity));
-		boolean result = productService.updateProduct(item, String.valueOf(productId));
-		//boolean result = true; //productService.updateProduct(item, productId); 
-		return result;
-	}*/
-	
-	
-	
-	/*@PutMapping("/products/{productId}/d/{quantity}")	
-	public Products depositProductInStock(@PathVariable Integer productId, @PathVariable Integer quantity) {
-		Products item = productService.getProductsByProductId(Long.valueOf(productId)); //itemService.getItem(no);
-		Integer currQuantity = item.getQuantity();
-		int newQuantity = currQuantity + quantity; //Integer.parseInt(quantity);
-		item.setQuantity(newQuantity); //String.valueOf(newQuantity));
-		return null; //productService.updateProduct(item, String.valueOf(productId));
-	}*/
-	
-	/*@PutMapping("/products/{productId}/d/{quantity}")	
-	public void depositProductInStock(@PathVariable Integer productId, @PathVariable Integer quantity) {
-		Products item = productService.getProductsByProductId(Long.valueOf(productId)); //itemService.getItem(no);
-		Integer currQuantity = item.getQuantity();
-		int newQuantity = currQuantity + quantity; //Integer.parseInt(quantity);
-		item.setQuantity(newQuantity); //String.valueOf(newQuantity));
-		//return null; //productService.updateProduct(item, String.valueOf(productId));
-	}*/
-	
 }
